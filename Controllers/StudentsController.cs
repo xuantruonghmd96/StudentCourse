@@ -45,5 +45,14 @@ namespace StudentCourse.Controllers
             //    .Include(x => x.StudentCourseMaps).ThenInclude(x => x.Course);
             return Ok(res);
         }
+
+        [HttpGet("lazy")]
+        public IActionResult GetLazy()
+        {
+            var res = dbContext.Students
+                .Select(x => new StudentModel(x));
+
+            return Ok(res);
+        }
     }
 }

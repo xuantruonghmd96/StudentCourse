@@ -10,6 +10,6 @@ namespace StudentCourse.Models
         public int Id { get; set; }
         public string Name { get; set; }
 
-        public ICollection<StudentCourseMap> StudentCourseMaps { get; set; }
+        public virtual ICollection<StudentCourseMap> StudentCourseMaps { get; set; }
     }
 }

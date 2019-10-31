@@ -27,5 +27,12 @@ namespace StudentCourse.Models
 
             modelBuilder.Entity<StudentCourseMap>().HasKey(x => new { x.CourseId, x.StudentId });
         }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            base.OnConfiguring(optionsBuilder);
+
+            optionsBuilder.UseLazyLoadingProxies();
+        }
     }
 }
